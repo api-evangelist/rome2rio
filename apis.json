@@ -1,0 +1,67 @@
+{
+    "name": "Rome2rio",
+    "description": "Kong is the world's most popular open source microservice API gateway. Use Kong to secure, manage and orchestrate microservice APIs.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1135-rome2rio.jpg",
+    "tags": [
+        "have api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/rome2rio\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Rome2rio",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1135-rome2rio.jpg",
+            "humanURL": "http:\/\/www.mashape.com\/apis\/rome2rio",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/rome2rio-openapi.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Website",
+            "url": "http:\/\/www.mashape.com\/apis\/rome2rio"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/kong-42b1"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/rome2rio"
+        },
+        {
+            "type": "Email",
+            "url": "bizdev@konghq.com"
+        },
+        {
+            "type": "Email",
+            "url": "press@konghq.com"
+        },
+        {
+            "type": "Email",
+            "url": "support@konghq.com"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@konghq.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/rome2rio"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/thekonginc"
+        }
+    ]
+}

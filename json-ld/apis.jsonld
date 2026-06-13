@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "apievangelist": "https://apievangelist.com/vocab#"
+  },
+  "@type": "WebAPI",
+  "@id": "https://raw.githubusercontent.com/api-evangelist/rome2rio/refs/heads/main/apis.yml",
+  "name": "Rome2Rio API",
+  "description": "Rome2Rio is a multi-modal travel planning platform covering 240+ countries, 10 million+ locations, and 20,000+ transport operators. The Rome2Rio REST API enables door-to-door route discovery across flights, trains, buses, ferries, and driving for any two points worldwide.",
+  "url": "https://www.rome2rio.com/",
+  "provider": {
+    "@type": "Organization",
+    "name": "Rome2Rio",
+    "url": "https://www.rome2rio.com/",
+    "foundingDate": "2011",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Melbourne, Australia"
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Omio Group"
+    },
+    "sameAs": [
+      "https://github.com/rome2rio",
+      "https://www.linkedin.com/company/rome2rio"
+    ]
+  },
+  "documentation": "https://www.rome2rio.com/documentation/1-4/search/",
+  "termsOfService": "https://www.rome2rio.com/about/terms/",
+  "offers": {
+    "@type": "Offer",
+    "name": "Free API",
+    "url": "http://free.rome2rio.com/api/1.4"
+  },
+  "availableChannel": [
+    {
+      "@type": "ServiceChannel",
+      "name": "Search API",
+      "description": "Multi-modal door-to-door travel route search between any two points worldwide, returning flights, trains, buses, ferries, and driving options with segment details, durations, operators, and indicative pricing.",
+      "serviceUrl": "http://free.rome2rio.com/api/1.4/json/Search",
+      "documentation": "https://www.rome2rio.com/documentation/1-4/search/"
+    },
+    {
+      "@type": "ServiceChannel",
+      "name": "Autocomplete API",
+      "description": "Place-name suggestions as a user types, returning ranked matching locations (cities, airports, train stations, addresses) for use as origin or destination in the Search API.",
+      "serviceUrl": "http://free.rome2rio.com/api/1.4/json/Autocomplete",
+      "documentation": "https://www.rome2rio.com/documentation/1-4/autocomplete/"
+    },
+    {
+      "@type": "ServiceChannel",
+      "name": "Geocode API",
+      "description": "Resolves a place-name or address string to a canonical Rome2Rio place record with geographic coordinates, place type, and country.",
+      "serviceUrl": "http://free.rome2rio.com/api/1.4/json/Geocode",
+      "documentation": "https://www.rome2rio.com/documentation/1-4/geocode/"
+    }
+  ],
+  "keywords": [
+    "travel",
+    "multi-modal",
+    "transportation",
+    "routes",
+    "transit",
+    "flights",
+    "trains",
+    "buses",
+    "ferries",
+    "navigation",
+    "geocoding",
+    "autocomplete"
+  ],
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide",
+    "description": "240+ countries"
+  },
+  "apiStatus": "https://help.rome2rio.com/",
+  "privacyPolicy": "https://www.rome2rio.com/privacy/",
+  "blog": "https://www.rome2rio.com/blog/"
+}

@@ -1,0 +1,143 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+provider: Rome2Rio
+providerId: rome2rio
+publisherName: Rome2Rio
+serviceCategory: API
+created: '2026-06-13'
+modified: '2026-06-13'
+tags:
+  - Travel
+  - Multi-Modal
+  - Transportation
+  - Routes
+  - Transit
+  - FinOps
+  - Cost Management
+  - FOCUS
+description: FinOps framework definition for the Rome2Rio API surface. Provides a
+  FOCUS-aligned mapping for cost allocation, usage measurement, and unit-economics
+  reporting. The Basic Access tier is free up to 100,000 requests/month; the Commercial
+  tier is contract-priced. FinOps focus is on tracking request volume against the
+  monthly quota, forecasting growth, and making the tier upgrade decision visible.
+principles:
+  - name: Visibility
+    description: Make Rome2Rio API consumption visible to engineering and product teams
+      so quota burn is understood before the monthly limit is reached.
+  - name: Allocation
+    description: Tag every chargeable API call with the consuming team, environment,
+      application, and feature for accurate showback.
+  - name: Optimization
+    description: Cache route results where TTL permits, batch geocode lookups, and
+      debounce autocomplete calls to minimize billable request volume.
+  - name: Accountability
+    description: Establish a budget owner and upgrade trigger for the Basic-to-Commercial
+      tier transition so cost surprises are avoided.
+domains:
+  - name: Understand Usage and Cost
+    capabilities:
+      - Data Ingestion
+      - Allocation
+      - Reporting and Analytics
+      - Anomaly Management
+  - name: Quantify Business Value
+    capabilities:
+      - Planning and Estimating
+      - Forecasting
+      - Budgeting
+      - Benchmarking
+      - Unit Economics
+  - name: Optimize Usage and Cost
+    capabilities:
+      - Architecting for Cloud
+      - Rate Optimization
+      - Workload Optimization
+      - Cloud Sustainability
+      - Licensing and SaaS
+  - name: Manage the FinOps Practice
+    capabilities:
+      - FinOps Practice Operations
+      - FinOps Education and Enablement
+      - Invoicing and Chargeback
+      - Onboarding Workloads
+      - Intersecting Disciplines
+billingModel:
+  pricingCategory: Tiered
+  billingFrequency: Monthly
+  billingCurrency: USD
+  chargeCategories:
+    - Usage
+    - Purchase
+    - Tax
+    - Credit
+    - Adjustment
+  chargeFrequency: Recurring
+focusColumns:
+  ServiceName: Rome2Rio
+  ServiceCategory: Developer Tools / API
+  ProviderName: Rome2Rio
+  PublisherName: Rome2Rio
+  InvoiceIssuerName: Rome2Rio (Omio Group)
+  PricingCategory: Tiered
+  PricingUnit: request
+  BillingCurrency: USD
+  ChargeCategory: Usage
+meters:
+  - name: api_requests
+    description: Count of billable API requests across Search, Autocomplete, and Geocode
+    unit: request
+    aggregation: sum
+    dimensions:
+      - api
+      - endpoint
+      - tier
+      - consumer
+  - name: data_egress
+    description: Bytes returned in API JSON responses
+    unit: GB
+    aggregation: sum
+    dimensions:
+      - api
+      - endpoint
+      - consumer
+apis:
+  - name: Rome2Rio Search API
+    baseURL: http://free.rome2rio.com/api/1.4
+    tags:
+      - Travel
+      - Routes
+      - Multi-Modal
+      - Transportation
+    serviceName: Rome2Rio Search API
+    serviceCategory: API
+  - name: Rome2Rio Autocomplete API
+    baseURL: http://free.rome2rio.com/api/1.4
+    tags:
+      - Autocomplete
+      - Places
+    serviceName: Rome2Rio Autocomplete API
+    serviceCategory: API
+  - name: Rome2Rio Geocode API
+    baseURL: http://free.rome2rio.com/api/1.4
+    tags:
+      - Geocoding
+      - Places
+      - Coordinates
+    serviceName: Rome2Rio Geocode API
+    serviceCategory: API
+unitEconomics:
+  - name: Cost per 1K Route Searches
+    metric: billed_cost / (search_requests / 1000)
+    target: TBD
+  - name: Requests Used vs Monthly Quota
+    metric: api_requests / 100000
+    target: <0.8 (flag upgrade review above 80%)
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

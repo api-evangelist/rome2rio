@@ -1,0 +1,103 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Rome2Rio
+providerId: rome2rio
+created: '2026-06-13'
+modified: '2026-06-13'
+tags:
+  - Travel
+  - Multi-Modal
+  - Transportation
+  - Routes
+  - Transit
+description: Machine-readable plans and pricing scaffold for the Rome2Rio API surface.
+  The API is available under a free-access tier (up to 100,000 requests/month) for
+  partners using the API or White Label integration, and a commercial tier for higher
+  volumes with SLA and 24/7 support. Exact pricing is negotiated directly with Rome2Rio.
+plans:
+  - id: rome2rio-basic
+    name: Basic Access
+    type: freemium
+    description: Free partner access tier providing up to 100,000 search requests per
+      month. Available to partners integrating via the API or White Label. No live
+      airfares or transit prices are returned; route and operator data only.
+    entries:
+      - label: API Requests
+        description: Monthly API request quota across Search, Autocomplete, and Geocode
+          endpoints
+        name: api_requests
+        type: quota
+        metric: requests
+        limit: 100000
+        timeFrame: month
+        geo: global
+        domains:
+          - http://free.rome2rio.com/api/1.4
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Rate Limit
+        description: Approximate steady-state request rate for the basic tier
+        name: rate_limit
+        type: rate
+        metric: requests_per_minute
+        limit: 60
+        timeFrame: minute
+        geo: global
+        domains:
+          - http://free.rome2rio.com/api/1.4
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+    elements:
+      - name: Search API
+      - name: Autocomplete API
+      - name: Geocode API
+      - name: JSON Responses
+      - name: Community Support
+  - id: rome2rio-commercial
+    name: Commercial
+    type: paid
+    description: Commercial tier for sites and apps with volumes exceeding the basic
+      quota. Includes a contractual SLA and 24/7 integration support. Pricing is
+      negotiated directly with Rome2Rio based on volume and use case.
+    entries:
+      - label: API Requests
+        description: Monthly API request quota negotiated per contract
+        name: api_requests
+        type: quota
+        metric: requests
+        limit: -1
+        timeFrame: month
+        geo: global
+        domains:
+          - http://free.rome2rio.com/api/1.4
+        unit: 1
+        price: custom
+        userMultiplied: false
+      - label: Rate Limit
+        description: Elevated steady-state rate negotiated per contract
+        name: rate_limit
+        type: rate
+        metric: requests_per_minute
+        limit: -1
+        timeFrame: minute
+        geo: global
+        domains:
+          - http://free.rome2rio.com/api/1.4
+        unit: 1
+        price: custom
+        userMultiplied: false
+    elements:
+      - name: Search API
+      - name: Autocomplete API
+      - name: Geocode API
+      - name: JSON Responses
+      - name: Contractual SLA
+      - name: 24/7 Support
+      - name: Higher Volume Quota
+      - name: White Label Options
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

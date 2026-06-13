@@ -1,0 +1,119 @@
+aid: rome2rio
+name: Rome2Rio
+description: >-
+  Rome2Rio is a multi-modal travel planning platform founded in Melbourne,
+  Australia in 2011, and part of the Omio Group since 2019. It covers 240+
+  countries, 10 million+ locations, and 20,000+ transport operators, enabling
+  door-to-door route discovery across flights, trains, buses, ferries, and
+  driving. Developers can access route search, geocoding, and autocomplete
+  capabilities through the Rome2Rio REST API, which returns JSON responses
+  covering routes, segments, duration, and operator information for any two
+  points worldwide.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+position: Consumer
+created: '2026-06-13'
+modified: '2026-06-13'
+tags:
+  - Travel
+  - Multi-Modal
+  - Transportation
+  - Routes
+  - Transit
+  - Flights
+  - Trains
+  - Buses
+  - Ferries
+  - Navigation
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/rome2rio/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: rome2rio:search
+    name: Rome2Rio Search API
+    description: >-
+      The Rome2Rio Search API returns multi-modal door-to-door travel routes
+      between any origin and destination worldwide. Given origin and destination
+      as place names or coordinates, it returns a ranked list of routes covering
+      flights, trains, buses, ferries, and driving, with segment details,
+      durations, operators, and indicative pricing information. Responses are
+      JSON over HTTP. The API covers 700+ airlines and 2 million surface routes.
+    humanURL: https://www.rome2rio.com/documentation/1-4/search/
+    baseURL: http://free.rome2rio.com/api/1.4
+    tags:
+      - Travel
+      - Routes
+      - Multi-Modal
+      - Transportation
+      - Transit
+      - Flights
+      - Trains
+      - Buses
+      - Ferries
+    properties:
+      - type: Documentation
+        url: https://www.rome2rio.com/documentation/1-4/search/
+  - aid: rome2rio:autocomplete
+    name: Rome2Rio Autocomplete API
+    description: >-
+      The Rome2Rio Autocomplete API provides place-name suggestions as a user
+      types, returning a ranked list of matching locations (cities, airports,
+      train stations, addresses) that can be passed as origin or destination to
+      the Search API. Responses are JSON and the endpoint is hosted on the same
+      free.rome2rio.com base.
+    humanURL: https://www.rome2rio.com/documentation/1-4/autocomplete/
+    baseURL: http://free.rome2rio.com/api/1.4
+    tags:
+      - Autocomplete
+      - Places
+      - Geocoding
+      - Travel
+    properties:
+      - type: Documentation
+        url: https://www.rome2rio.com/documentation/1-4/autocomplete/
+  - aid: rome2rio:geocode
+    name: Rome2Rio Geocode API
+    description: >-
+      The Rome2Rio Geocode API resolves a place-name or address string to a
+      canonical Rome2Rio place record with geographic coordinates, place type,
+      and country, enabling precise origin and destination inputs for the Search
+      API. Responses are JSON.
+    humanURL: https://www.rome2rio.com/documentation/1-4/geocode/
+    baseURL: http://free.rome2rio.com/api/1.4
+    tags:
+      - Geocoding
+      - Places
+      - Coordinates
+      - Travel
+    properties:
+      - type: Documentation
+        url: https://www.rome2rio.com/documentation/1-4/geocode/
+common:
+  - type: Website
+    url: https://www.rome2rio.com/
+  - type: About
+    url: https://www.rome2rio.com/about/
+  - type: Documentation
+    url: https://www.rome2rio.com/documentation/1-4/search/
+  - type: Blog
+    url: https://www.rome2rio.com/blog/
+  - type: Support
+    url: https://help.rome2rio.com/en/support/tickets/new
+  - type: HelpCenter
+    url: https://help.rome2rio.com/
+  - type: PrivacyPolicy
+    url: https://www.rome2rio.com/privacy/
+  - type: TermsOfService
+    url: https://www.rome2rio.com/about/terms/
+  - type: GitHub
+    url: https://github.com/rome2rio
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/rome2rio
+  - type: Advertise
+    url: https://www.rome2rio.com/advertise/
+  - type: GetListed
+    url: https://www.rome2rio.com/get-listed/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

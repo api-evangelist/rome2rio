@@ -1,0 +1,90 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Rome2Rio
+providerId: rome2rio
+created: '2026-06-13'
+modified: '2026-06-13'
+tags:
+  - Travel
+  - Multi-Modal
+  - Transportation
+  - Routes
+  - Transit
+  - Rate Limiting
+  - Quotas
+  - Throttling
+description: Machine-readable rate limit definitions for the Rome2Rio API surface.
+  The Basic Access tier allows up to 100,000 search requests per month. Commercial
+  tiers are negotiated directly. Rate-limit response headers and exact burst ceilings
+  are not publicly documented; values below are scaffold defaults to be reconciled
+  with Rome2Rio on partner onboarding.
+headers:
+  limit: X-RateLimit-Limit
+  remaining: X-RateLimit-Remaining
+  reset: X-RateLimit-Reset
+  retryAfter: Retry-After
+  policy: RateLimit-Policy
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+  serviceUnavailable: 503
+limits:
+  - tier: basic
+    name: Basic Access Monthly Quota
+    scope: api-key
+    metric: requests_per_month
+    limit: 100000
+    timeFrame: month
+    applies:
+      - Rome2Rio Search API
+      - Rome2Rio Autocomplete API
+      - Rome2Rio Geocode API
+  - tier: basic
+    name: Basic Access Request Rate
+    scope: api-key
+    metric: requests_per_minute
+    limit: 60
+    burst: 120
+    timeFrame: minute
+    applies:
+      - Rome2Rio Search API
+      - Rome2Rio Autocomplete API
+      - Rome2Rio Geocode API
+  - tier: commercial
+    name: Commercial Negotiated Quota
+    scope: contract
+    metric: requests_per_month
+    limit: -1
+    timeFrame: month
+    applies:
+      - Rome2Rio Search API
+      - Rome2Rio Autocomplete API
+      - Rome2Rio Geocode API
+  - tier: commercial
+    name: Commercial Negotiated Rate
+    scope: contract
+    metric: requests_per_minute
+    limit: -1
+    burst: -1
+    timeFrame: minute
+    applies:
+      - Rome2Rio Search API
+      - Rome2Rio Autocomplete API
+      - Rome2Rio Geocode API
+policies:
+  - name: Backoff Strategy
+    description: Clients should implement exponential backoff with jitter when receiving
+      429 responses, honoring the Retry-After header when present.
+  - name: Burst Handling
+    description: Short bursts above the steady-state per-minute limit may be tolerated
+      up to the burst ceiling before throttling engages.
+  - name: Quota Reset
+    description: Monthly quotas reset at the start of each calendar month. Per-minute
+      windows reset on a rolling basis.
+  - name: Key Parameter
+    description: The API key is passed as the `key` query parameter on all requests
+      to the free.rome2rio.com endpoint. Example — /api/1.4/json/Search?key=YOUR_KEY.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

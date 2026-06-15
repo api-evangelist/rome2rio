@@ -13,7 +13,7 @@
       "date": "2026-06-05"
     },
     {
-      "title": "Los Angeles 2026 Global Football Tournament – Transport Tips",
+      "title": "Los Angeles 2026 Global Football Tournament \u2013 Transport Tips",
       "url": "https://www.rome2rio.com/blog/2026/06/05/los-angeles-2026-global-football-tournament-transport-tips/",
       "date": "2026-06-05"
     },
@@ -102,5 +102,14 @@
       "url": "https://www.rome2rio.com/blog/2025/10/11/rome2rio-trip-planner/",
       "date": "2025-10-11"
     }
-  ]
+  ],
+  "repo": "rome2rio",
+  "feeds": [
+    {
+      "source": "https://www.rome2rio.com/documentation/1-4/search/",
+      "error": "HTTPError"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-06-14T20:42:17Z"
 }

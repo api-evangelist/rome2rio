@@ -90,6 +90,8 @@ apis:
       - type: Documentation
         url: https://www.rome2rio.com/documentation/1-4/geocode/
 common:
+  - type: DomainSecurity
+    url: security/rome2rio-domain-security.yml
   - type: Website
     url: https://www.rome2rio.com/
   - type: About

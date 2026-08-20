@@ -35,6 +35,17 @@ tags:
   - Transit
   - Flights
   - Trains
+  - Bus
+  - Ferries
+  - Navigation
+tags_raw:
+  - Travel
+  - Multi-Modal
+  - Transportation
+  - Routes
+  - Transit
+  - Flights
+  - Trains
   - Buses
   - Ferries
   - Navigation
@@ -54,6 +65,16 @@ apis:
     humanURL: https://www.rome2rio.com/documentation/1-4/search/
     baseURL: http://free.rome2rio.com/api/1.4
     tags:
+      - Travel
+      - Routes
+      - Multi-Modal
+      - Transportation
+      - Transit
+      - Flights
+      - Trains
+      - Bus
+      - Ferries
+    tags_raw:
       - Travel
       - Routes
       - Multi-Modal

@@ -35,7 +35,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/rome2rio.png
 access: 3rd-Party
-position: Consumer
+position: Consuming
 created: '2026-06-13'
 modified: '2026-06-13'
 tags:
